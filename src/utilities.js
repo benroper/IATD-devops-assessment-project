@@ -117,8 +117,6 @@ export function generateFlightId(airline) {
         return undefined;
     }
 
-    airline = airline;
-
     let digits = [];
     for (let i = 0; i < 3; i++) {
         digits[i] = Math.round(Math.random() * 9);
