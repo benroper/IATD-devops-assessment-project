@@ -145,8 +145,6 @@ function addAirline(airline, airlines) {
         }
     });
 
-    {}
-
     if (existing) return airlines;
 
     airlines.push(airline);
