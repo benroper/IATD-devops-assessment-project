@@ -106,3 +106,21 @@ test("isValidDateString: invalid string", () => {
   test("generateFlightId: whitespace string", () => {
     expect(generateFlightId("   \n")).toBe(undefined);
   });
+
+  // Test first two ID character should match first two character of airline name
+  test("generateFlightId: first two chars to match airline", () => {
+    expect(generateFlightId("BenAirlines").substring(0, 2)).toBe("BE");
+  });
+  test("generateFlightId: first two chars to match airline", () => {
+    expect(generateFlightId("RoperAirlines").substring(0, 2)).toBe("RO");
+  });
+  test("generateFlightId: first two chars to match airline", () => {
+    expect(generateFlightId("AustraliaExpress").substring(0, 2)).toBe("AU");
+  });
+   // Test that the first two characters of the ID do not match another airline's code
+  test("generateFlightId: first two chars should not match different airline", () => {
+    expect(generateFlightId("BenAirlines").substring(0, 2)).not.toBe("AU");
+  });
+  test("generateFlightId: first two chars should not match different airline", () => {
+    expect(generateFlightId("AustraliaExpress").substring(0, 2)).not.toBe("BE");
+  });
