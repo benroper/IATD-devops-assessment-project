@@ -116,10 +116,14 @@ export function generateFlightId(airline) {
     if (airline.trim() === "") {
         return undefined;
     }
+    else if (airline.trim().length < 2) {
+        return undefined;
+    } else {
 
     let digits = [];
     for (let i = 0; i < 3; i++) {
         digits[i] = Math.round(Math.random() * 9);
     }
     return airline.substring(0, 2).toUpperCase().concat(digits[0].toString(), digits[1].toString(), digits[2].toString());
+    }
 }
