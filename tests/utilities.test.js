@@ -132,3 +132,10 @@ test("isValidDateString: invalid string", () => {
     test("generateFlightId: first two chars should not match different airline", () => {
       expect(generateFlightId("AustraliaExpress").substring(0, 2)).not.toBe("Au");
     });
+
+    // Test that generateFlightID returns undefined if is emply or contains less than two non-whitespace characters 
+    test("generateFlightId: should return undefined for empty or invalid airline names", () => {
+    expect(generateFlightId("B ")).toBeUndefined();
+    expect(generateFlightId(" e")).toBeUndefined();
+    expect(generateFlightId("")).toBeUndefined();
+     });
