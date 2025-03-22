@@ -49,7 +49,7 @@ do {
                         }
                         if (flightIndex < 0) {
                             logWrapped(`ERROR: Flight ID ${flightId} not found. Please enter the ID of a flight already tracked by this system.`);
-                        } else if (flightIndex < 0);
+                        } 
                     } while (flightIndex < 0);
 
                     logWrapped(`The current departure date for ${flights[flightIndex].id} is ${flights[flightIndex].date}`);
