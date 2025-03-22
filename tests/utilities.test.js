@@ -124,3 +124,11 @@ test("isValidDateString: invalid string", () => {
   test("generateFlightId: first two chars should not match different airline", () => {
     expect(generateFlightId("AustraliaExpress").substring(0, 2)).not.toBe("BE");
   });
+
+    // Test that the first two characters are not lowercase
+    test("generateFlightId: first two chars should not match different airline", () => {
+      expect(generateFlightId("BenAirlines").substring(0, 2)).not.toBe("Be");
+    });
+    test("generateFlightId: first two chars should not match different airline", () => {
+      expect(generateFlightId("AustraliaExpress").substring(0, 2)).not.toBe("Au");
+    });
